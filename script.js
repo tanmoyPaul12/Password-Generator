@@ -36,11 +36,20 @@ function createPassword(){
 
 
 
+
 function copyPass() {
-    passwordBox.select();
-    document.execCommand("copy");
+    navigator.clipboard.writeText(passwordBox.value)
+        .then(() => {
+            alert("copied ✅");
+        })
+        .catch(err => {
+            console.error("Failed to copy: ", err);
+        });
 }
 
 
-button.addEventListener("click", createPassword)
-copyButton.addEventListener("click", copyPass)
+
+
+button.addEventListener("click", createPassword);
+
+copyButton.addEventListener("click", copyPass);
