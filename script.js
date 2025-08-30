@@ -34,8 +34,12 @@ function createPassword(){
     passwordBox.value = password;
 }
 
+//old way of doing
+// function copyPass() {
+//     passwordBox.select();
+//     document.execCommand("copy");
 
-
+// }
 
 function copyPass() {
     navigator.clipboard.writeText(passwordBox.value)
